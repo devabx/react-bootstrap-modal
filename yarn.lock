@@ -2,6 +2,17 @@
 # yarn lockfile v1
 
 
+"@devabx/react-overlays@^0.8.4":
+  version "0.8.4"
+  resolved "https://registry.yarnpkg.com/@devabx/react-overlays/-/react-overlays-0.8.4.tgz#ce049712244f02a01c1f2148ddec1875773beadb"
+  dependencies:
+    classnames "^2.2.5"
+    dom-helpers "^3.2.1"
+    prop-types "^15.5.10"
+    prop-types-extra "^1.0.1"
+    react-transition-group "^2.2.0"
+    warning "^3.0.0"
+
 "@types/node@^6.0.46":
   version "6.0.90"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-6.0.90.tgz#0ed74833fa1b73dcdb9409dcb1c97ec0a8b13b02"
@@ -5588,17 +5599,6 @@ react-live@^1.7.1:
     prop-types "^15.5.8"
     unescape "^0.2.0"
 
-"react-overlays@https://github.com/devabx/react-overlays.git#3c67675":
-  version "0.8.3"
-  resolved "https://github.com/devabx/react-overlays.git#3c67675f807033f805425a2cbee013ed4ba46b27"
-  dependencies:
-    classnames "^2.2.5"
-    dom-helpers "^3.2.1"
-    prop-types "^15.5.10"
-    prop-types-extra "^1.0.1"
-    react-transition-group "^2.2.0"
-    warning "^3.0.0"
-
 react-test-renderer@^16.0.0, react-test-renderer@^16.0.0-0:
   version "16.0.0"
   resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-16.0.0.tgz#9fe7b8308f2f71f29fc356d4102086f131c9cb15"
@@ -5606,7 +5606,7 @@ react-test-renderer@^16.0.0, react-test-renderer@^16.0.0-0:
     fbjs "^0.8.16"
     object-assign "^4.1.1"
 
-react-transition-group@^2.2.0:
+react-transition-group@^2.2.0, react-transition-group@^2.3.1:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-2.3.1.tgz#31d611b33e143a5e0f2d94c348e026a0f3b474b6"
   dependencies:

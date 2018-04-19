@@ -1,9 +1,8 @@
 import React from 'react';
-import Transition from 'react-overlays/lib/Transition';
+import Transition from 'react-transition-group/Transition';
 
 class Fade extends React.Component {
-
-  constructor(props, context){
+  constructor(props, context) {
     super(props, context);
   }
 
@@ -11,12 +10,12 @@ class Fade extends React.Component {
     return (
       <Transition
         {...this.props}
-        className='fade'
-        enteredClassName='in'
-        enteringClassName='in'
+        className="fade"
+        enteredClassName="in"
+        enteringClassName="in"
       />
     );
   }
 }
 
-export default Fade
+export default Fade;

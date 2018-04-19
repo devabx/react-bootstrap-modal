@@ -1,25 +1,25 @@
-import PropTypes from "prop-types";
-import React from "react";
-import componentOrElement from "prop-types-extra/lib/componentOrElement";
-import { findDOMNode } from "react-dom";
-import BaseModal from "react-overlays/lib/Modal";
-import isOverflowing from "react-overlays/lib/utils/isOverflowing";
+import PropTypes from 'prop-types';
+import React from 'react';
+import componentOrElement from 'prop-types-extra/lib/componentOrElement';
+import { findDOMNode } from 'react-dom';
+import BaseModal from '@devabx/react-overlays/lib/Modal';
+import isOverflowing from '@devabx/react-overlays/lib/utils/isOverflowing';
 
-import Fade from "./Fade";
-import Body from "./Body";
-import Header from "./Header";
-import Title from "./Title";
-import Footer from "./Footer";
-import Dismiss from "./Dismiss";
+import Fade from './Fade';
+import Body from './Body';
+import Header from './Header';
+import Title from './Title';
+import Footer from './Footer';
+import Dismiss from './Dismiss';
 
-import ownerDocument from "dom-helpers/ownerDocument";
-import canUseDOM from "dom-helpers/util/inDOM";
-import scrollbarWidth from "dom-helpers/util/scrollbarSize";
-import css from "dom-helpers/style";
-import cn from "classnames";
+import ownerDocument from 'dom-helpers/ownerDocument';
+import canUseDOM from 'dom-helpers/util/inDOM';
+import scrollbarWidth from 'dom-helpers/util/scrollbarSize';
+import css from 'dom-helpers/style';
+import cn from 'classnames';
 
 let baseIndex = {};
-let PREFIX = "modal";
+let PREFIX = 'modal';
 
 let getZIndex;
 
@@ -44,7 +44,7 @@ class Modal extends React.Component {
     lg: PropTypes.bool,
     /** --- **/
 
-    backdrop: PropTypes.oneOf(["static", true, false]),
+    backdrop: PropTypes.oneOf(['static', true, false]),
     keyboard: PropTypes.bool,
     animate: PropTypes.bool,
     transition: PropTypes.any,
@@ -69,7 +69,7 @@ class Modal extends React.Component {
     animate: true,
     transition: true,
     container: canUseDOM ? document.body : null,
-    attentionClass: "shake",
+    attentionClass: 'shake',
     unmountOnExit: true,
     manager: (BaseModal.getDefaultProps
       ? BaseModal.getDefaultProps()
@@ -94,7 +94,7 @@ class Modal extends React.Component {
     this.handleExiting = this.handleExiting.bind(this);
 
     this.state = {
-      classes: ""
+      classes: ''
     };
   }
 
@@ -102,18 +102,18 @@ class Modal extends React.Component {
     getZIndex =
       getZIndex ||
       (() => {
-        let modal = document.createElement("div"),
-          backdrop = document.createElement("div"),
+        let modal = document.createElement('div'),
+          backdrop = document.createElement('div'),
           zIndexFactor;
 
-        modal.className = "modal hide";
-        backdrop.className = "modal-backdrop hide";
+        modal.className = 'modal hide';
+        backdrop.className = 'modal-backdrop hide';
 
         document.body.appendChild(modal);
         document.body.appendChild(backdrop);
 
-        baseIndex.modal = +css(modal, "z-index");
-        baseIndex.backdrop = +css(backdrop, "z-index");
+        baseIndex.modal = +css(modal, 'z-index');
+        baseIndex.backdrop = +css(backdrop, 'z-index');
         zIndexFactor = baseIndex.modal - baseIndex.backdrop;
 
         document.body.removeChild(modal);
@@ -177,14 +177,14 @@ class Modal extends React.Component {
           key="modal"
           ref="inner"
           className={cn(
-            prefix + "-dialog",
+            prefix + '-dialog',
             dialogClassName,
             classes,
             (props.small || props.sm) && `${prefix}-sm`,
             (props.large || props.lg) && `${prefix}-lg`
           )}
         >
-          <div className={prefix + "-content"}>{children}</div>
+          <div className={prefix + '-content'}>{children}</div>
         </div>
       </div>
     );
@@ -208,8 +208,8 @@ class Modal extends React.Component {
         onExiting={this.handleExiting}
         onExited={onExited}
         backdropStyle={backdrop}
-        backdropClassName={prefix + "-backdrop"}
-        containerClassName={prefix + "-open"}
+        backdropClassName={prefix + '-backdrop'}
+        containerClassName={prefix + '-open'}
         transition={transition}
         dialogTransitionTimeout={Modal.TRANSITION_DURATION}
         backdropTransitionTimeout={Modal.BACKDROP_TRANSITION_DURATION}
@@ -223,12 +223,12 @@ class Modal extends React.Component {
     let { attentionClass } = this.props;
 
     if (attentionClass)
-      this.setState({ classes: "" }, () => {
+      this.setState({ classes: '' }, () => {
         if (this.props.show) {
           // eslint-disable-next-line no-unused-expressions
           this.refs.inner.offsetWidth;
           this.setState({
-            classes: attentionClass + " animated"
+            classes: attentionClass + ' animated'
           });
         }
       });
@@ -236,7 +236,7 @@ class Modal extends React.Component {
 
   handleBackdropClick(e) {
     if (e.target !== e.currentTarget) return;
-    if (this.props.backdrop === "static") return this.attention();
+    if (this.props.backdrop === 'static') return this.attention();
 
     this.props.onHide();
   }
@@ -256,20 +256,20 @@ class Modal extends React.Component {
 
     return {
       dialog: {
-        zIndex: getZIndex("modal"),
+        zIndex: getZIndex('modal'),
         paddingRight:
           bodyIsOverflowing && !modalIsOverflowing ? scrollbarWidth() : void 0,
         paddingLeft:
           !bodyIsOverflowing && modalIsOverflowing ? scrollbarWidth() : void 0
       },
       backdrop: {
-        zIndex: getZIndex("backdrop")
+        zIndex: getZIndex('backdrop')
       }
     };
   }
 
   _removeAttentionClasses() {
-    this.setState({ classes: "" });
+    this.setState({ classes: '' });
   }
 }
 

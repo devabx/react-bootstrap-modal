@@ -1,6 +1,6 @@
 {
   "name": "@devabx/react-bootstrap-modal",
-  "version": "4.0.2",
+  "version": "1.0.0",
   "description": "",
   "author": {
     "name": "Jason Quense",
@@ -72,10 +72,11 @@
     "webpack-dev-server": "^2.9.1"
   },
   "dependencies": {
+    "@devabx/react-overlays": "^0.8.4",
     "classnames": "^2.2.3",
     "dom-helpers": "^3.2.1",
     "prop-types": "^15.5.8",
     "prop-types-extra": "^1.0.1",
-    "react-overlays": "https://github.com/devabx/react-overlays.git#3c67675"
+    "react-transition-group": "^2.3.1"
   }
 }
