@@ -72,7 +72,7 @@
     "webpack-dev-server": "^2.9.1"
   },
   "dependencies": {
-    "@devabx/react-overlays": "^0.8.4",
+    "@devabx/react-overlays": "^0.8.5",
     "classnames": "^2.2.3",
     "dom-helpers": "^3.2.1",
     "prop-types": "^15.5.8",

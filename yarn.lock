@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@devabx/react-overlays@^0.8.4":
-  version "0.8.4"
-  resolved "https://registry.yarnpkg.com/@devabx/react-overlays/-/react-overlays-0.8.4.tgz#ce049712244f02a01c1f2148ddec1875773beadb"
+"@devabx/react-overlays@^0.8.5":
+  version "0.8.5"
+  resolved "https://registry.yarnpkg.com/@devabx/react-overlays/-/react-overlays-0.8.5.tgz#332c43f109dbda6b52814088760c85843d7b8d47"
   dependencies:
     classnames "^2.2.5"
     dom-helpers "^3.2.1"
