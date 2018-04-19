@@ -7,10 +7,12 @@ class Fade extends React.Component {
   }
 
   render() {
+    const className = this.props.in ? 'fade in' : 'fade';
+
     return (
       <Transition
         {...this.props}
-        className="fade"
+        className={className}
         enteredClassName="in"
         enteringClassName="in"
       />
