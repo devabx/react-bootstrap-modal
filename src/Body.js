@@ -3,9 +3,8 @@ import PropTypes from 'prop-types';
 import cn from 'classnames';
 
 class ModalBody extends React.Component {
-
-  static getDefaultPrefix(){
-    return 'modal'
+  static getDefaultPrefix() {
+    return 'modal';
   }
 
   render() {
@@ -13,13 +12,12 @@ class ModalBody extends React.Component {
     let prefix = modalPrefix || ModalBody.getDefaultPrefix();
 
     return (
-      <div {...props} className={cn(className,  prefix + '-body')}>
+      <div {...props} className={cn(className, prefix + '-body')}>
         {children}
       </div>
-    )
+    );
   }
 }
-
 
 ModalBody.propTypes = {
   /**
@@ -28,4 +26,4 @@ ModalBody.propTypes = {
   modalPrefix: PropTypes.string
 };
 
-export default ModalBody
+export default ModalBody;

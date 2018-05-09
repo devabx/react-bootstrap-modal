@@ -58,9 +58,10 @@ class Modal extends React.Component {
     onExiting: PropTypes.func,
     onExited: PropTypes.func,
 
+    unmountOnExit: PropTypes.bool,
     modalPrefix: PropTypes.string,
     dialogClassName: PropTypes.string,
-    attentionClass: PropTypes.string
+    attentionClass: PropTypes.string,
   };
 
   static defaultProps = {
@@ -196,7 +197,7 @@ class Modal extends React.Component {
           this.modal = ref && ref.modal;
           this.backdrop = ref && ref.backdrop;
         }}
-        unmountOnExit={props.unmountOnExit}
+        unmountOnExit={this.props.unmountOnExit}
         container={container}
         backdrop={props.backdrop}
         show={props.show}
@@ -211,8 +212,6 @@ class Modal extends React.Component {
         backdropClassName={prefix + '-backdrop'}
         containerClassName={prefix + '-open'}
         transition={transition}
-        dialogTransitionTimeout={Modal.TRANSITION_DURATION}
-        backdropTransitionTimeout={Modal.BACKDROP_TRANSITION_DURATION}
       >
         {modal}
       </BaseModal>

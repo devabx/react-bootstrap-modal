@@ -2,6 +2,10 @@ import React from 'react';
 import Transition from 'react-transition-group/Transition';
 
 class Fade extends React.Component {
+  static defaultProps = {
+    timeout: 300
+  };
+
   constructor(props, context) {
     super(props, context);
   }
@@ -13,8 +17,7 @@ class Fade extends React.Component {
       <Transition
         {...this.props}
         className={className}
-        enteredClassName="in"
-        enteringClassName="in"
+        timeout={this.props.timeout}
       />
     );
   }
